@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link href="./output.css" rel="stylesheet" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | Conference ticket generator</title>
+  </head>
+  <body
+    class="font-inconsolata grid place-items-center bg-[url(/public/assets/images/background-mobile.png)] bg-cover sm:bg-[url(/public/assets/images/background-tablet.png)] md:bg-[url(/public/assets/images/background-desktop.png)]"
+  >
+    <div class="pt-main relative min-h-screen max-w-[1440px] overflow-hidden text-white">
+      <div
+        class="absolute top-0 h-full w-full bg-[url('./assets/images/pattern-lines.svg')] bg-cover"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute top-10 right-0 h-[90px] w-full max-w-[90px] bg-[url('./assets/images/pattern-squiggly-line-top.svg')] bg-contain bg-no-repeat sm:h-[400px] sm:max-w-[400px]"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute -top-8 -left-5 h-[100px] w-full max-w-[100px] bg-[url('./assets/images/pattern-circle.svg')] bg-contain bg-no-repeat sm:-top-20 sm:left-0 sm:h-[200px] sm:max-w-[200px]"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute -bottom-14 h-[200px] w-full bg-[url('./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg')] bg-contain bg-no-repeat sm:-bottom-0 sm:h-[400px] md:bg-[url('./assets/images/pattern-squiggly-line-bottom-desktop.svg')]"
+        aria-hidden="true"
+      ></div>
+      <header class="px-small grid place-items-center gap-10 text-center">
+        <img src="./assets/images/logo-full.svg" alt="company-logo-coding-conf" />
+        <div class="grid place-items-center" id="head-text">
+          <h1 class="grid text-3xl font-bold md:text-5xl lg:text-6xl">
+            Your Journey to Coding Conf
+            <br class="hidden md:block" />
+            2025 Starts Here!
+          </h1>
+          <br />
+          <p class="grid w-fit text-xl text-neutral-300 lg:text-2xl">
+            Secure your spot at next year's biggest coding conference
+          </p>
+        </div>
+      </header>
+      <main class="py-main px-small relative z-10 grid place-items-center">
+        <section id="main-section" class="grid w-full place-items-center">
+          <h2 id="section-title" class="sr-only">Conference Ticket Generator Form</h2>
+          <form class="w-full max-w-[460px]" id="ticket-form" novalidate>
+            <div class="relative z-0 grid gap-3">
+              <label for="file-input">Upload Avatar</label>
+              <div
+                class="bg-neutral-0/10 hover:bg-neutral-0/30 relative grid place-items-center gap-4 rounded-2xl border-2 border-dashed border-neutral-500 px-8 py-4 transition-colors focus-within:outline-2 focus-within:outline-offset-3 focus-within:outline-neutral-500"
+              >
+                <div
+                  id="drop-area"
+                  class="grid h-[50px] w-[50px] place-items-center rounded-lg border-[1px] border-neutral-500 bg-neutral-700/70 shadow-sm shadow-black"
+                >
+                  <img src="./assets/images/icon-upload.svg" alt="upload-image-icon" />
+                </div>
+                <div id="drag-drop-settings">
+                  <p class="text-neutral-300">Drag and drop or click to upload</p>
+                </div>
+                <input
+                  id="file-input"
+                  accept="image/*"
+                  class="absolute z-10 h-full w-full cursor-pointer opacity-0"
+                  type="file"
+                />
+              </div>
+              <div class="flex space-x-2">
+                <svg
+                  id="info-icon-file"
+                  class="stroke-[#D1D0D5]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  viewBox="0 0 16 16"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                  <path d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042" />
+                </svg>
+                <p role="alert" id="file-size-check" class="text-xs text-neutral-500">
+                  Upload your photo (JPG or PNG, max size 500KB).
+                </p>
+              </div>
+            </div>
+            <div class="grid gap-3">
+              <div class="grid gap-3 pt-8">
+                <label for="full-name">Full Name</label>
+                <input
+                  id="full-name"
+                  name="full-name"
+                  class="bg-neutral-0/10 cursor-pointer rounded-lg border-[1px] border-neutral-500 p-3 text-neutral-300 transition-colors hover:bg-neutral-50/30 focus:outline-2 focus:outline-offset-3 focus:outline-neutral-500"
+                  type="text"
+                  required
+                />
+                <span role="alert" class="hidden items-center gap-2 text-xs text-orange-700">
+                  <svg
+                    class="stroke-orange-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                    <path fill="" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042" />
+                  </svg>
+                  Can't be empty.
+                </span>
+              </div>
+              <div class="grid gap-3">
+                <label for="email">Email Address</label>
+                <input
+                  id="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  class="bg-neutral-0/10 cursor-pointer rounded-lg border-[1px] border-neutral-500 p-3 text-neutral-300 transition-colors placeholder:text-neutral-300 hover:bg-neutral-50/30 focus:outline-2 focus:outline-offset-3 focus:outline-neutral-500"
+                  type="email"
+                  required
+                />
+                <span role="alert" class="hidden items-center gap-2 text-xs text-orange-700">
+                  <svg
+                    class="stroke-orange-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                    <path fill="" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042" />
+                  </svg>
+                  Please enter a valid email address.
+                </span>
+              </div>
+              <div class="grid gap-3">
+                <label for="github-username">GitHub Username</label>
+                <input
+                  id="github-username"
+                  name="github-username"
+                  placeholder="@yourusername"
+                  class="bg-neutral-0/10 cursor-pointer rounded-lg border-[1px] border-neutral-500 p-3 text-neutral-300 transition-colors placeholder:text-neutral-300 hover:bg-neutral-50/30 focus:outline-2 focus:outline-offset-3 focus:outline-neutral-500"
+                  type="text"
+                  required
+                />
+                <span role="alert" class="hidden items-center gap-2 text-xs text-orange-700">
+                  <svg
+                    class="stroke-orange-700"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    viewBox="0 0 16 16"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2 8a6 6 0 1 0 12 0A6 6 0 0 0 2 8Z" />
+                    <path fill="" d="M8.004 10.462V7.596ZM8 5.57v-.042Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.004 10.462V7.596M8 5.569v-.042" />
+                  </svg>
+                  Can't be empty.
+                </span>
+              </div>
+            </div>
+            <button
+              id="submit-button"
+              class="focus:ring-neutral-0 mt-5 w-full cursor-pointer rounded-lg border-b-4 border-transparent bg-orange-700 p-3 text-center text-xl font-bold text-neutral-900 transition-colors hover:border-orange-500 focus:ring-3 focus:ring-offset-2 focus:outline-4 focus:outline-offset-0 focus:outline-neutral-900"
+            >
+              Generate My Ticket
+            </button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
