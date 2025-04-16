@@ -1,12 +1,11 @@
 @font-face {
   font-family: Inconsolata;
-  src: url("/public/assets/fonts/static/Inconsolata-Regular.ttf")
-    format("truetype");
+  src: url('./assets/fonts/static/Inconsolata-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* colors */
@@ -21,7 +20,7 @@
   --color-gradient-2: hsl(0, 0%, 100%);
 
   /* font family */
-  --font-inconsolata: "Inconsolata", sans-serif;
+  --font-inconsolata: 'Inconsolata', sans-serif;
 
   /* sizes */
   --text-labels: 1.25rem;
